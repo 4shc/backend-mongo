@@ -9,6 +9,10 @@ const cors = require ('cors');
 const app = express();
 const port = 5000;
 
+//enlazamos la conexión de la BD
+conectarBD();
+app.use(cors());
+
 //new sesión 26
 app.use(express.json());
 // Aca van las rutas de los módulos
@@ -21,9 +25,7 @@ app.use('/api/productos', require('../routes/RoutersProductos'));
 
 
 
-//enlazamos la conexión de la BD
-conectarBD();
-app.use(cors());
+
 
 
 // Puerto donde se lanza el servidor
